@@ -1,12 +1,12 @@
 # ER-website
 This project is fully build based on Code with Mosh bootcamp.
 
-If you wish to run this app locally
-1:npx create-react-app my-app-name
-2:cd my-app
-3:npm i react-router-dom@4.3.1 bootstrap@4.1.1 font-awesome@4.7.0
-4:npm start
-enjoy:)
+If you wish to run this app locally<br>
+1:npx create-react-app my-app-name<br>
+2:cd my-app<br>
+3:npm i react-router-dom@4.3.1 bootstrap@4.1.1 font-awesome@4.7.0<br>
+4:npm start<br>
+enjoy:)<br>
 
 npm start
 
