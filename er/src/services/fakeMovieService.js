@@ -3,68 +3,68 @@ import * as genresAPI from "./fakeGenreService";
 const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd471815",
-    title: "Terminator",
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
+    title: "Amazon Alexa",
+    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Audio Interfaces" },
     numberInStock: 6,
-    dailyRentalRate: 2.5,
+    condition: "work well",
     publishDate: "2018-01-03T19:04:28.809Z",
     liked: true
   },
   {
     _id: "5b21ca3eeb7f6fbccd471816",
-    title: "Die Hard",
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
+    title: "Artcessories Clean Box Pro",
+    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Audio Interfaces" },
     numberInStock: 5,
-    dailyRentalRate: 2.5
+    condition: "work well"
   },
   {
     _id: "5b21ca3eeb7f6fbccd471817",
     title: "Get Out",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
     numberInStock: 8,
-    dailyRentalRate: 3.5
+    condition: "work well"
   },
   {
     _id: "5b21ca3eeb7f6fbccd471819",
-    title: "Trip to Italy",
-    genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
+    title: "iPhone lightning cable",
+    genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Cables" },
     numberInStock: 7,
-    dailyRentalRate: 3.5
+    condition: "broken"
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181a",
-    title: "Airplane",
-    genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
+    title: "DVI to DVI cable",
+    genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Cables" },
     numberInStock: 7,
-    dailyRentalRate: 3.5
+    condition: "work well"
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181b",
-    title: "Wedding Crashers",
-    genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
+    title: "HDMI Cable",
+    genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Cables" },
     numberInStock: 7,
-    dailyRentalRate: 3.5
+    condition: "work well"
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181e",
-    title: "Gone Girl",
-    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    title: "DJI OM5",
+    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Gimbal" },
     numberInStock: 7,
-    dailyRentalRate: 4.5
+    condition: "missing"
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181f",
-    title: "The Sixth Sense",
-    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    title: "DJI RSC 2",
+    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Gimbal" },
     numberInStock: 4,
-    dailyRentalRate: 3.5
+    condition: "work well"
   },
   {
     _id: "5b21ca3eeb7f6fbccd471821",
-    title: "The Avengers",
-    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
+    title: "Audio Mixer",
+    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Audio Interfaces" },
     numberInStock: 7,
-    dailyRentalRate: 3.5
+    condition: "work well"
   }
 ];
 
@@ -78,13 +78,13 @@ export function getMovie(id) {
 
 export function saveMovie(movie) {
   let movieInDb = movies.find(m => m._id === movie._id) || {};
-  movieInDb.name = movie.name;
+  movieInDb.title = movie.title;
   movieInDb.genre = genresAPI.genres.find(g => g._id === movie.genreId);
   movieInDb.numberInStock = movie.numberInStock;
-  movieInDb.dailyRentalRate = movie.dailyRentalRate;
+  movieInDb.condition = movie.condition;
 
   if (!movieInDb._id) {
-    movieInDb._id = Date.now();
+    movieInDb._id = Date.now().toString();
     movies.push(movieInDb);
   }
 
