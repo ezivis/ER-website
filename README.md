@@ -14,3 +14,7 @@ Added navgation bar and improved the information architectrue for better user ex
 
 Blog 2022/08/25
 Added filtering function, added classification function.
+
+Blog 2022/10/07
+Added searching function, added add equipment function, and now user can modify the equipment details.<br>
+Added login and register page, need to wait Calling Backend Services to fully function.
